@@ -9,10 +9,6 @@ namespace AgeCalculator
     internal class PatternMenu
     {
         /*MyPublicMethods*/
-        public void MyAge (string BirthDate)
-        {
-            Console.WriteLine("You BirthDate: " + BirthDate );
-        }
         public void PatternHeadLineMethod(string PatternHeadline) // HeadLine
         {
             string Line = "";
