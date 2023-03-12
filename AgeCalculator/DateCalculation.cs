@@ -8,11 +8,11 @@ namespace AgeCalculator
 {
     internal class DateCalculation
     {
-        public int[] BirthDateInput { get; set; } = new int[3];
+        public int[] BirthDateInput = new int[3];
         public void MyAge()
         {
-            DateTime Birthday = new DateTime(BirthDateInput[0], BirthDateInput[1], BirthDateInput[2]);
-            Console.WriteLine("You BirthDate: " + Birthday );
+            DateTime Birthday = new(BirthDateInput[0], BirthDateInput[1], BirthDateInput[2]);
+            Console.WriteLine("You BirthDate: " + Birthday.ToString());
         }
         /*//Chunk 16 
   using System;

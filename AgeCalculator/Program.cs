@@ -2,24 +2,35 @@
 
 class program
 {
-    public void Main(string[] args)
+    public static void Main(string[] args)
     {
-        /*DateInput from the class Date Calculation*/
+        /*Show you input*/
+        DateCalculation calculationInput = new();
+        /* 
+        string[] Showing = new string[3] 
+        {
+            Showing[0] = CalculationInput.BirthDateInput[0].ToString(),
+            Showing[1] = CalculationInput.BirthDateInput[1].ToString(),
+            Showing[2] = CalculationInput.BirthDateInput[2].ToString(),
+        }; 
+        */
+        /*BirthDate Input*/
         Console.WriteLine("Welcome!");
-        DateCalculation CalculationInput = new();
         Console.WriteLine("Type in you Year of Birth ...");
-        CalculationInput.BirthDateInput[2] = Convert.ToInt32(Console.ReadLine);
+        calculationInput.BirthDateInput[0] = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Type in you Month of Birth ...");
-        CalculationInput.BirthDateInput[1] = Convert.ToInt32(Console.ReadLine);
+        calculationInput.BirthDateInput[1] = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Type in you Day of Birth ...");
-        CalculationInput.BirthDateInput[0] = Convert.ToInt32(Console.ReadLine);
-        /*my pattern menu*/
+        calculationInput.BirthDateInput[2] = Convert.ToInt32(Console.ReadLine());
+
+        /*New Objects*/
         PatternMenu MainMenu = new ();
-        MainMenu.MyAge();
+        /*MainMenu*/
+        calculationInput.MyAge(); // Output of my age
         MainMenu.PatternHeadLineMethod("Main Menu");
         MainMenu.PatternTextMethod("Claculate how long you lived", 1);
         MainMenu.PatternTextMethod("Calculate how long it takes too be 100 Years old", 2);
         MainMenu.PatternTextMethod("Quit the program?", 3);
-
+        Thread.Sleep(8000);
     }
 }
