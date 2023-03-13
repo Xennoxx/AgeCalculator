@@ -9,19 +9,27 @@ namespace AgeCalculator
     internal class DateCalculation
     {
         public int[] BirthDateInput = new int[3];
+        DateTime Birthday;
         public void MyAge()
         {
-            DateTime Birthday = new(BirthDateInput[0], BirthDateInput[1], BirthDateInput[2]);
-            Console.WriteLine("You BirthDate: " + Birthday.ToString());
+            Birthday = new (BirthDateInput[0], BirthDateInput[1], BirthDateInput[2]);
+            Console.WriteLine("You BirthDate: ");
+            Console.WriteLine(Birthday.ToString());
         }
-        /*//Chunk 16 
-  using System;
-  public static class Clock
-{
-    public static int Past(int h, int m, int s)
-    {
-        return (int)(new TimeSpan(h, m, s)).TotalMilliseconds;
-    }
-}*/
+        public void MyAgeTotalDays()
+        {
+            TimeSpan myAgeTotal = DateTime.Now.Subtract(Birthday);
+            Console.WriteLine("You total age time: " + myAgeTotal.Days);
+        }
+        public void MeInHundretDays()
+        {
+            Console.WriteLine(Birthday.AddYears(100));
+        }
+        public void Cyberpunk()
+        {
+        TimeSpan myAgeTotal = DateTime.Now.Subtract(Birthday);
+        TimeSpan cyberpunk = new DateTime(2077,1,1).Subtract(Birthday);
+            Console.WriteLine("You need too live " + (cyberpunk.Days - myAgeTotal.Days) + " days until we have the Cyberpunk 2077 scenario. :))");
+        }
     }
 }
